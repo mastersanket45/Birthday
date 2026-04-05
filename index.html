@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love 💖</title>
+
+<style>
+    /* Big Title */
+.main-title {
+    font-size: 38px;
+    z-index: 2;
+    text-shadow: 0 0 15px white, 0 0 30px pink;
+}
+
+/* Glowing circle behind */
+.circle-glow {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(255,255,255,0.4), transparent);
+    border-radius: 50%;
+    filter: blur(40px);
+    z-index: 1;
+}
+
+/* Typing */
+.typing {
+    font-size: 20px;
+    margin-top: 20px;
+    min-height: 30px;
+    z-index: 2;
+}
+
+/* Subtitle */
+.subtitle {
+    margin-top: 15px;
+    z-index: 2;
+}
+
+/* Button */
+.start-btn {
+    margin-top: 30px;
+    padding: 14px 25px;
+    font-size: 18px;
+    border-radius: 30px;
+    background: linear-gradient(45deg,#ff4d6d,#ff9a9e);
+    color: white;
+    animation: pulse 1.5s infinite;
+    z-index: 2;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
+
+/* Pages */
+.page {
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Backgrounds */
+.page1 { background: linear-gradient(135deg,#ff9a9e,#fad0c4); }
+.page2 { background: linear-gradient(135deg,#a18cd1,#fbc2eb); }
+.page3 { background: linear-gradient(135deg,#f6d365,#fda085); }
+.page4 { background: linear-gradient(135deg,#84fab0,#8fd3f4); }
+.page5 { background: linear-gradient(135deg,#fccb90,#d57eeb); }
+
+/* Glow Heading */
+.glow {
+    font-size: 36px;
+    text-shadow: 0 0 10px white, 0 0 20px pink;
+}
+
+/* Subtitle */
+.subtitle {
+    font-size: 18px;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* Tap Animation */
+.tap-text {
+    margin-top: 20px;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+/* Floating Hearts */
+.heart {
+    position: absolute;
+    bottom: -10px;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+/* Glass UI */
+.message-box, .gallery, button {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+}
+
+/* Message */
+.message-box {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 15px;
+    width: 90%;
+    text-align: left;
+    line-height: 1.6;
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    color: black;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Photo Grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 15px;
+    transition: 0.4s;
+    transform: rotate(-2deg);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.gallery img:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.gallery img:hover {
+    transform: scale(1.1) rotate(0deg);
+    box-shadow: 0 0 20px white;
+}
+.slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slider img {
+    width: 80%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 10px 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    transition: 0.5s;
+}
+
+#imgCaption {
+    margin-top: 10px;
+    font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page page1" id="page1" style="display:flex;">
+
+<h1 class="main-title">💖 Happy Birthday Jaanuuu 💖</h1>
+
+<div class="circle-glow"></div>
+
+<p id="typingText" class="typing"></p>
+
+<p class="subtitle">I love You Soooooooo Muchhhhhhhhh 💖</p>
+
+<button class="start-btn" onclick="nextPage(2)">Start Your Surprise 💖</button>
+
+</div>
+
+<!-- PAGE 2 -->
+<div class="page page2" id="page2">
+<h2>💌 My Message 💖</h2>
+
+<div class="message-box">
+<p>
+Firstly, wishing you the happiest birthday 🎉 my jaanuuu ❤️ I love you soooo much. From the day we started till now, this is our 4th celebration together… time is passing so fast, right? I just hope we stay like this forever, together ❤️ From college life till now, taking responsibilities at home, I’ve seen how much effort you’re putting in… and I’m really proud of you jaanu 🥹 I know sometimes I irritate you a lot 😅 but please bear with me. Sometimes I don’t know how to show my love properly, so it comes out like that… but it’s always because I love you so much ❤️ Even in this long distance, I promise I’ll take care of you as much as I can. I just want you to be happy, safe, and smiling always 🥺 I know sometimes I might feel toxic or hurt you… I’m really sorry for that. Everything I do is only because I love you 🥹❤️ I wish you achieve everything you’ve ever dreamed of. You deserve all the happiness in the world 🌍✨<br><br> Once again, happy birthday pooku ❤️ And I’m really sorry that I couldn’t make your birthday grand this time 😔 But I promise… after our marriage, I’ll celebrate it in the most special way ever ❤️✨
+</p>
+</div>
+
+<button onclick="nextPage(3)">Next 💖</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page page3" id="page3">
+<h2>📸 Our Memories 💖</h2>
+
+<div class="slider">
+    <img id="sliderImg" src="img1.jpeg">
+    <p id="imgCaption">Our first memory 💖</p>
+</div>
+
+<div>
+    <button onclick="prevImg()">⬅ Prev</button>
+    <button onclick="nextImg()">Next ➡</button>
+</div>
+
+<button onclick="nextPage(4)">Next 💖</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page page4" id="page4">
+<h2>🎯 Fun Question 💖</h2>
+<p>Who loves you the most? 😏💖</p>
+
+<button onclick="correctAnswer()">Ofcourse it's Me 😍💖</button>
+<button id="escapeBtn" onmouseover="moveButton()">Someone else 😒</button>
+
+<p id="result"></p>
+
+<button onclick="nextPage(5)">Next 💖</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page page5" id="page5">
+<h2>💖 Final Surprise 💖</h2>
+<p>I LOVE YOU SO MUCH POOKU 💖🥺</p>
+<p>You are my everything 💖</p>
+
+<button onclick="playMusic()">Play Music 🎵💖</button>
+
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<script>
+function nextPage(pageNumber) {
+    document.querySelectorAll(".page").forEach(p => p.style.display = "none");
+    document.getElementById("page" + pageNumber).style.display = "flex";
+}
+const images = [
+    {src: "img1.jpeg", text: "Our first memory 💖"},
+    {src: "img2.jpeg", text: "Your cute smile 😍"},
+    {src: "img3.jpeg", text: "Best day ever 💫"},
+    {src: "img4.jpeg", text: "My favorite person 💖"},
+    {src: "img5.jpeg", text: "Forever us 🥺💖"}
+];
+
+let currentImg = 0;
+
+function showImage() {
+    document.getElementById("sliderImg").src = images[currentImg].src;
+    document.getElementById("imgCaption").innerText = images[currentImg].text;
+}
+
+function nextImg() {
+    currentImg = (currentImg + 1) % images.length;
+    showImage();
+}
+
+function prevImg() {
+    currentImg = (currentImg - 1 + images.length) % images.length;
+    showImage();
+}
+
+function correctAnswer() {
+    document.getElementById("result").innerHTML = "Correct 😍💖";
+}
+
+function moveButton() {
+    const btn = document.getElementById("escapeBtn");
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 100);
+    btn.style.position = "absolute";
+    btn.style.left = x + "px";
+    btn.style.top = y + "px";
+}
+
+function playMusic() {
+    document.getElementById("music").play();
+}
+const text = "Hey Pooku… I made something special for you 💖";
+let index = 0;
+
+function typeEffect() {
+    if (index < text.length) {
+        document.getElementById("typingText").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 50);
+    }
+}
+
+typeEffect();
+
+/* Floating Hearts */
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 6000);
+}
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
